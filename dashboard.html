@@ -3,8 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
+    <title>Enhanced Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* Additional styles for drag-and-drop */
+      .drag-container {
+        display: flex;
+        gap: 10px;
+      }
+      .draggable {
+        padding: 10px;
+        background-color: #f1f1f1;
+        border: 1px solid #ccc;
+        cursor: move;
+        width: 100px;
+        text-align: center;
+      }
+      .dropzone {
+        padding: 20px;
+        border: 2px dashed #ccc;
+        min-height: 100px;
+        text-align: center;
+        background-color: #e9ecef;
+      }
+    </style>
   </head>
   <body>
     <!-- Navbar -->
@@ -21,8 +44,107 @@
 
     <!-- Dashboard Content -->
     <div class="container mt-4">
-      <h2>Welcome to the Employee Management System</h2>
-      <p>Use the navigation bar to manage employees.</p>
+      <h2>Employee Management Dashboard</h2>
+      <p>Manage employee details and perform various actions using the options below.</p>
+
+      <!-- Forms with Various Inputs -->
+      <form class="mt-4">
+        <h4>Employee Information</h4>
+
+        <!-- Text Field -->
+        <div class="form-group">
+          <label for="empName">Employee Name:</label>
+          <input type="text" class="form-control" id="empName" placeholder="Enter full name" />
+        </div>
+
+        <!-- Radio Buttons -->
+        <div class="form-group">
+          <label>Gender:</label><br />
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="male" value="male" />
+            <label class="form-check-label" for="male">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="female" value="female" />
+            <label class="form-check-label" for="female">Female</label>
+          </div>
+        </div>
+
+        <!-- Checkboxes -->
+        <div class="form-group">
+          <label>Skills:</label><br />
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="skill1" value="JavaScript" />
+            <label class="form-check-label" for="skill1">JavaScript</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="skill2" value="Python" />
+            <label class="form-check-label" for="skill2">Python</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="skill3" value="Java" />
+            <label class="form-check-label" for="skill3">Java</label>
+          </div>
+        </div>
+
+        <!-- Dropdown -->
+        <div class="form-group">
+          <label for="position">Position:</label>
+          <select class="form-control" id="position">
+            <option>Manager</option>
+            <option>Developer</option>
+            <option>Designer</option>
+            <option>Tester</option>
+          </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <!-- Links and Buttons Section -->
+      <div class="mt-4">
+        <h4>Actions</h4>
+        <a href="employeeList.html" class="btn btn-link">View Employee List</a>
+        <button type="button" class="btn btn-secondary">Save Changes</button>
+        <button type="button" class="btn btn-danger">Delete Employee</button>
+      </div>
+
+      <!-- Drag-and-Drop Section -->
+      <div class="mt-4">
+        <h4>Assign Tasks (Drag and Drop)</h4>
+        <div class="drag-container">
+          <div class="draggable" draggable="true" id="task1">Task 1</div>
+          <div class="draggable" draggable="true" id="task2">Task 2</div>
+          <div class="draggable" draggable="true" id="task3">Task 3</div>
+        </div>
+        <div class="dropzone" id="dropzone">Drop tasks here to assign</div>
+      </div>
     </div>
+
+    <script>
+      // JavaScript for Drag and Drop
+      const draggables = document.querySelectorAll(".draggable");
+      const dropzone = document.getElementById("dropzone");
+
+      draggables.forEach((draggable) => {
+        draggable.addEventListener("dragstart", () => {
+          draggable.classList.add("dragging");
+        });
+
+        draggable.addEventListener("dragend", () => {
+          draggable.classList.remove("dragging");
+        });
+      });
+
+      dropzone.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        const dragging = document.querySelector(".dragging");
+        dropzone.appendChild(dragging);
+      });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
