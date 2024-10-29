@@ -1,126 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LangChain for LLM Application Development - Syllabus</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-      .navbar-dark-blue {
-        background-color: #003366;
-      }
+        .navbar-dark-blue {
+            background-color: #003366;
+        }
+        /* Back to Top Button Style */
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            font-size: 20px;
+            padding: 10px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 50%;
+            background-color: #003366;
+            color: white;
+            transition: opacity 0.3s;
+        }
+        #backToTop:hover {
+            background-color: #555;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-dark-blue fixed-top">
-      <div class="container">
-        <a class="navbar-brand text-white" href="#">QElight - Quality Education</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link text-white" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#contact">Contact</a>
-            </li>
-          </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-dark-blue">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">QElight - Quality Education</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
     <!-- Syllabus Content -->
     <section class="container my-5">
-      <h2 class="text-center mb-4">LangChain for LLM Application Development - Syllabus</h2>
+        <h2 class="text-center mb-4">LangChain for LLM Application Development - Syllabus</h2>
 
-      <ul class="list-group">
-        <li class="list-group-item">
-          <strong>Introduction to LangChain for LLM Applications</strong>
-          <ul>
-            <li>Overview of the LangChain framework for LLM application development</li>
-            <li>Course goals and the possibilities of using LangChain to enhance LLM capabilities</li>
-          </ul>
-        </li>
-        <li class="list-group-item">
-          <strong>Models, Prompts, and Parsers</strong>
-          <ul>
-            <li>Calling large language models and providing structured prompts</li>
-            <li>Parsing responses to extract relevant data and achieve targeted outputs</li>
-            <li>Hands-on code examples for understanding prompt-response workflows</li>
-          </ul>
-        </li>
-        <li class="list-group-item">
-          <strong>Memory for LLMs</strong>
-          <ul>
-            <li>Implementing memory to store conversation history and maintain context</li>
-            <li>Optimizing limited context space using memory</li>
-            <li>Practical examples of using memory to enhance conversational applications</li>
-          </ul>
-        </li>
-        <li class="list-group-item">
-          <strong>Chains: Creating Sequences of Operations</strong>
-          <ul>
-            <li>Building chains for multi-step operations and workflows</li>
-            <li>Configuring sequences of prompts and LLM interactions</li>
-            <li>Code examples for constructing and implementing chains</li>
-          </ul>
-        </li>
-        <li class="list-group-item">
-          <strong>Question Answering over Documents</strong>
-          <ul>
-            <li>Applying LLMs to proprietary data for Q&A tasks</li>
-            <li>Customizing responses to meet specific use case requirements</li>
-            <li>Code examples for document-based question answering</li>
-          </ul>
-        </li>
-        <li class="list-group-item">
-          <strong>Evaluation Techniques</strong>
-          <ul>
-            <li>Evaluating LLM performance on various tasks</li>
-            <li>Metrics and methods for assessing accuracy and relevance</li>
-            <li>Code examples for implementing evaluation techniques</li>
-          </ul>
-        </li>
-        <li class="list-group-item">
-          <strong>Agents: Building LLM Reasoning Agents</strong>
-          <ul>
-            <li>Exploring LLMs as autonomous reasoning agents</li>
-            <li>Configuring agents to carry out complex tasks independently</li>
-            <li>Hands-on code examples to develop and test agent capabilities</li>
-          </ul>
-        </li>
-        <li class="list-group-item">
-          <strong>Course Conclusion</strong>
-          <ul>
-            <li>Summary of key LangChain functionalities for LLM applications</li>
-            <li>Final insights on using LangChain to maximize LLM effectiveness</li>
-          </ul>
-        </li>
-      </ul>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <strong>Introduction</strong>
+                <ul>
+                    <li>Overview of the LangChain framework and its applications in LLMs</li>
+                    <li>Understanding the course objectives and structure</li>
+                </ul>
+            </li>
+            <li class="list-group-item">
+                <strong>Models, Prompts, and Parsers</strong>
+                <ul>
+                    <li>Calling LLMs effectively for diverse applications</li>
+                    <li>Providing prompts and structuring them for optimal responses</li>
+                    <li>Parsing responses to extract relevant information</li>
+                </ul>
+            </li>
+            <li class="list-group-item">
+                <strong>Memory</strong>
+                <ul>
+                    <li>Using memory to store conversation history and relevant context</li>
+                    <li>Managing limited context space effectively</li>
+                </ul>
+            </li>
+            <li class="list-group-item">
+                <strong>Chains</strong>
+                <ul>
+                    <li>Creating sequences of operations to build complex workflows</li>
+                    <li>Implementing chained calls to enhance LLM functionality</li>
+                </ul>
+            </li>
+            <li class="list-group-item">
+                <strong>Question Answering over Documents</strong>
+                <ul>
+                    <li>Applying LLMs to interact with proprietary data</li>
+                    <li>Setting up question answering systems tailored to specific data</li>
+                </ul>
+            </li>
+            <li class="list-group-item">
+                <strong>Evaluation</strong>
+                <ul>
+                    <li>Evaluating prompt effectiveness and LLM responses</li>
+                    <li>Fine-tuning prompts for improved performance</li>
+                </ul>
+            </li>
+            <li class="list-group-item">
+                <strong>Agents</strong>
+                <ul>
+                    <li>Exploring LLMs as reasoning agents in applications</li>
+                    <li>Configuring agents for diverse use cases and tasks</li>
+                </ul>
+            </li>
+            <li class="list-group-item">
+                <strong>Conclusion</strong>
+                <ul>
+                    <li>Summary of the course's key takeaways</li>
+                    <li>Final thoughts on implementing LangChain in real-world applications</li>
+                </ul>
+            </li>
+        </ul>
     </section>
 
     <!-- Footer -->
     <footer id="contact" class="bg-dark text-white text-center py-3">
-      <div class="container">
-        <p>&copy; 2024 QElight Workshops. All rights reserved.</p>
-        <p>Contact us: <a href="mailto:vishnupriya.connect@gmail.com" class="text-white">vishnupriya.connect@gmail.com</a></p>
-        <p>Phone: <a href="tel:+919606485837" class="text-white">+91 9606485837</a></p>
-      </div>
+        <div class="container">
+            <p>&copy; 2024 QElight Workshops. All rights reserved.</p>
+            <p>Contact us: <a href="mailto:vishnupriya.connect@gmail.com" class="text-white">vishnupriya.connect@gmail.com</a></p>
+            <p>Phone: <a href="tel:+919606485837" class="text-white">+91 9606485837</a></p>
+        </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button onclick="scrollToTop()" id="backToTop" class="btn btn-primary" title="Go to top">
+        <i class="bi bi-arrow-up" style="font-size: 1.5rem;"></i>
+    </button>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-  </body>
+
+    <!-- Script for Back to Top Button -->
+    <script>
+        window.onscroll = function() {
+            const backToTopButton = document.getElementById("backToTop");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    </script>
+</body>
 </html>
