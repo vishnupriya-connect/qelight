@@ -6,9 +6,13 @@
     <title>QElight One-Day AI & LLM Workshops</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+   <style>
       .navbar-dark-blue {
         background-color: #003366; /* Dark blue color */
+      }
+      .navbar-dark-black {
+        background-color: #000000; /* Dark black color */
       }
       .navbar-brand {
         font-size: 1.5rem; /* Adjust size for the brand */
@@ -16,11 +20,25 @@
       .navbar-nav .nav-link {
         font-size: 1.2rem; /* Adjust size for the nav links */
       }
+      /* Back to Top Button Style */
+    #backToTop {
+        display: none; /* Hidden by default */
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 99;
+        font-size: 16px;
+        padding: 10px 20px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
     </style>
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-dark-blue">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-dark-black">
       <div class="container">
         <a class="navbar-brand text-white" href="#">QElight - Quality Education</a>
         <button
@@ -37,10 +55,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active text-white" href="#">Home</a>
+              <a class="nav-link active text-white" href="#">Values</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="#workshops">Workshops</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#courses">Courses</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="#contact">Contact</a>
@@ -49,9 +70,42 @@
         </div>
       </div>
     </nav>
+    <header id="values" class="text-white text-center py-2 navbar-dark-blue">
+      <h1>Our Core Values</h1>
+    </header>
+<section class="py-5 bg-light text-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <h4>Integrity</h4>
+                <p>We uphold the highest standards of integrity in all of our actions. We are honest, transparent, and ethical in everything we do.</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h4>Respect</h4>
+                <p>Committed to fostering an inclusive culture that values diversity, encourages respectful dialogue, and ensures dignified treatment for all stakeholders.</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h4>Innovation</h4>
+                <p>We embrace change and continuously seek new ways to improve our products and services. Innovation is at the heart of our company.</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h4>Empathy</h4>
+                <p>Demonstrating understanding and compassion in all interactions, valuing customers' perspectives, and ensuring genuine consideration.</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h4>Add Value</h4>
+                <p>Driving business growth by consistently adding value to clients and the broader community through innovative solutions and a commitment to excellence.</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h4>Collaboration</h4>
+                <p>Fostering a team-oriented environment where ideas are shared openly, and everyone works together to achieve common goals.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Header Section -->
-    <header class="bg-info text-dark text-center py-2">
+    <header id="workshops" class="text-white text-center py-2 navbar-dark-blue">
       <h1>One-Day Workshops</h1>
       <p>Join our one-day workshops to explore cutting-edge AI and LLM technologies.</p>
     </header>
@@ -62,8 +116,7 @@
         <!-- <h2 class="text-center mb-4">Available Workshops</h2> -->
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
           <!-- Workshop Cards -->
-         <!-- Card 1 -->
-               <!-- Card 1 -->
+                 <!-- Card 1 -->
       <div class="col">
         <div class="card h-100">
           <div class="card-body">
@@ -565,18 +618,17 @@
           </div>
         </div>
       </div>
-
-
+          
         </div>
       </div>
     </section>
 
-    <header class="bg-info text-dark text-center py-2">
+    <header id="courses" class="text-white text-center py-2 navbar-dark-blue">
       <h1>Courses</h1>
       <p>Explore our diverse range of courses to expand your knowledge and skills.</p>
     </header>
 
-    <main class="container my-5">
+    <main  class="container my-5">
       <!-- <h2 class="text-center mb-4">Available Courses</h2> -->
       <div class="list-group">
         <!-- List Group Items for Courses -->
@@ -621,7 +673,7 @@
         <div class="list-group-item">
           <a href="english.html" class="text-decoration-none"><h5>English Vocabulary and Simplified Comprehensive Grammar</h5></a>
           <p class="mb-1">
-            Build a strong foundation in E nglish with extensive vocabulary and comprehensive grammar rules, simplified for easy understanding.
+            Build a strong foundation in English with extensive vocabulary and comprehensive grammar rules, simplified for easy understanding.
           </p>
         </div>
       </div>
@@ -630,7 +682,7 @@
     <!-- Footer Section -->
     <footer id="contact" class="bg-dark text-white text-center py-3">
       <div class="container">
-        <p>&copy; 2024 QElight Workshops. All rights reserved.</p>
+        <p>&copy; 2024 QElight All rights reserved.</p>
         <p>Contact us: <a href="mailto:vishnupriya.connect@gmail.com" class="text-white">vishnupriya.connect@gmail.com</a></p>
         <p>Phone: <a href="tel:+919606485837" class="text-white">+91 9606485837</a></p>
       </div>
@@ -639,5 +691,27 @@
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- Back to Top Button -->
+<button onclick="scrollToTop()" id="backToTop" class="btn btn-primary" title="Go to top">
+    <i class="bi bi-arrow-up" style="font-size: 1.5rem;"></i>
+</button>
+
+<!-- Script for Back to Top Button -->
+<script>
+    // Show the button when scrolled down
+    window.onscroll = function() {
+        const backToTopButton = document.getElementById("backToTop");
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    };
+
+    // Smooth scroll to top function
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+</script>
   </body>
 </html>
