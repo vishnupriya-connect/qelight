@@ -1,69 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Java Topics</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Markdown as HTML</title>
     <script src="https://cdn.jsdelivr.net/npm/showdown@2.0.0/dist/showdown.min.js"></script>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-      }
-      .markdown-section {
-        margin-bottom: 2em;
-      }
-      .folder-heading {
-        color: #2c3e50;
-        font-size: 1.5em;
-        margin-top: 1em;
-      }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .markdown-content {
+            line-height: 1.6;
+        }
     </style>
-  </head>
-  <body>
-    <div id="markdown-content"></div>
+</head>
+<body>
+    <h1>Java</h1>
+    <div id="markdown-content" class="markdown-content"></div>
 
     <script>
-      async function fetchMarkdownFiles(folderPath) {
-        const repoOwner = "vishnupriya-connect";
-        const repoName = "qelight";
-        const branch = "main";
-        const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${folderPath}?ref=${branch}`;
+      async function loadMarkdown() {
+          const fileUrl = "java.md"; // Replace with the path to your .md file
+          
+          try {
+              const response = await fetch(fileUrl);
+              if (!response.ok) throw new Error("Failed to load file");
 
-        try {
-          const response = await fetch(apiUrl);
-          const files = await response.json();
-
-          // Filter and sort Markdown files alphabetically
-          const markdownFiles = files
-            .filter(file => file.name.endsWith(".md"))
-            .sort((a, b) => a.name.localeCompare(b.name));
-
-          const converter = new showdown.Converter();
-          const contentDiv = document.getElementById("markdown-content");
-
-          // Fetch each Markdown file content and display it
-          for (let file of markdownFiles) {
-            const fileResponse = await fetch(file.download_url);
-            const text = await fileResponse.text();
-            const html = converter.makeHtml(text);
-
-            // Display each file's content in a new section, without the file name
-            contentDiv.innerHTML += `<div class="markdown-section">${html}</div>`;
+              const markdownText = await response.text();
+              const converter = new showdown.Converter();
+              const html = converter.makeHtml(markdownText);
+              document.getElementById("markdown-content").innerHTML = html;
+          } catch (error) {
+              console.error("Error loading markdown file:", error);
+              document.getElementById("markdown-content").innerHTML = "<p>Failed to load content.</p>";
           }
-        } catch (error) {
-          console.error(`Failed to fetch files from ${folderPath}:`, error);
-        }
       }
 
-      // Define folder paths to fetch
-      const folderPaths = [
-        "theory/corejava/1",
-        "theory/corejava/2",
-        "theory/corejava/3",
-      ];
-
-      // Fetch Markdown files for each folder path
-      folderPaths.forEach(fetchMarkdownFiles);
+      // Call the function to load and display the markdown
+      loadMarkdown();
     </script>
-  </body>
+</body>
 </html>
