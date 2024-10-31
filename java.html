@@ -10,12 +10,13 @@
     <div id="markdown-content"></div>
 
     <script>
-      async function loadMarkdown() {
-        const response = await fetch("theory/corejava/1/java points.md");
+     async function loadMarkdown() {
+        const response = await fetch("https://vishnupriya-connect.github.io/qelight/theory/corejava/1/java_points.md");
         const text = await response.text();
         const converter = new showdown.Converter();
         document.getElementById("markdown-content").innerHTML = converter.makeHtml(text);
-      }
+    }
+    loadMarkdown();
     </script>
   </body>
 </html>
