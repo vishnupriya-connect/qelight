@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Key Points</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <body class="bg-light">
+    <div class="container mt-5">
+      <h1 class="text-primary">Java Key Points</h1>
+
+      <!-- Object in Java -->
+      <section class="my-4">
+        <h2 class="text-secondary">Key Points on Object in Java</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Creating an Object:</strong> <code>Person john = new Person("John", 25);</code></li>
+          <li class="list-group-item">
+            <strong>Accessing Object Members:</strong> <code>john.greet(); // Access method; john.age = 26; // Access field</code>
+          </li>
+          <li class="list-group-item">
+            <strong>Object References:</strong> <code>Person anotherJohn = john; // Another reference to the same object</code>
+          </li>
+          <li class="list-group-item"><strong>Garbage Collection:</strong> <code>System.gc(); // Request garbage collection (optional)</code></li>
+        </ul>
+      </section>
+
+      <!-- Class in Java -->
+      <section class="my-4">
+        <h2 class="text-secondary">Key Points on Class in Java</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Class Declaration:</strong> <code>public class ClassName { /* fields and methods */ }</code></li>
+          <li class="list-group-item"><strong>Access Modifiers:</strong> <code>public class PublicClass { } // Accessible everywhere</code></li>
+          <li class="list-group-item"><strong>Constructors:</strong> <code>public ClassName() { /* constructor body */ }</code></li>
+          <li class="list-group-item"><strong>Static Members:</strong> <code>public static int count = 0; // Shared across instances</code></li>
+        </ul>
+      </section>
+
+      <!-- Inheritance in Java -->
+      <section class="my-4">
+        <h2 class="text-secondary">Key Points on Inheritance in Java</h2>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>Extending Classes:</strong> <code>class SubClass extends SuperClass { /* additional fields and methods */ }</code>
+          </li>
+          <li class="list-group-item">
+            <strong>Overriding Methods:</strong> <code>@Override public void methodName() { /* new implementation */ }</code>
+          </li>
+          <li class="list-group-item"><strong>Using super Keyword:</strong> <code>super.methodName(); // Calls superclass method</code></li>
+        </ul>
+      </section>
+
+      <!-- Interface in Java -->
+      <section class="my-4">
+        <h2 class="text-secondary">Key Points on Interface in Java</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Declaring an Interface:</strong> <code>public interface InterfaceName { void methodName(); }</code></li>
+          <li class="list-group-item">
+            <strong>Implementing Interfaces:</strong> <code>class ClassName implements InterfaceName { /* implementations */ }</code>
+          </li>
+          <li class="list-group-item">
+            <strong>Multiple Inheritance with Interfaces:</strong>
+            <code>class ClassName implements Interface1, Interface2 { /* implementations */ }</code>
+          </li>
+          <li class="list-group-item">
+            <strong>Default and Static Methods:</strong> <code>default void defaultMethod() { /* default implementation */ }</code>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Package in Java -->
+      <section class="my-4">
+        <h2 class="text-secondary">Key Points on Package in Java</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Creating a Package:</strong> <code>package com.example.project;</code></li>
+          <li class="list-group-item"><strong>Importing Packages:</strong> <code>import java.util.ArrayList;</code></li>
+          <li class="list-group-item">
+            <strong>Access Modifiers with Packages:</strong> <code>public class PublicClass { /* accessible in any package */ }</code>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Variables in Java -->
+      <section class="my-4">
+        <h2 class="text-secondary">Key Points on Variables in Java</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Variable Declaration and Initialization:</strong> <code>int number = 5;</code></li>
+          <li class="list-group-item"><strong>Instance Variable:</strong> <code>public int instanceVar;</code></li>
+          <li class="list-group-item"><strong>Static Variable:</strong> <code>public static int sharedVar = 10;</code></li>
+          <li class="list-group-item"><strong>Local Variable:</strong> <code>void myMethod() { int localVar = 20; }</code></li>
+          <li class="list-group-item">
+            <strong>Parameter Variable:</strong> <code>void myMethod(int param) { /* parameter used as input */ }</code>
+          </li>
+          <li class="list-group-item"><strong>Final Variable:</strong> <code>final int MAX_VALUE = 100;</code></li>
+        </ul>
+      </section>
+
+      <!-- Primitive Data Types in Java -->
+      <section class="my-4">
+        <h2 class="text-secondary">Key Points on Primitive Data Types in Java</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Primitive Type Declaration:</strong> <code>int age = 25;</code></li>
+          <li class="list-group-item"><strong>Byte Type:</strong> <code>byte smallNum = 10;</code></li>
+          <li class="list-group-item"><strong>Double Type:</strong> <code>double pi = 3.14159;</code></li>
+          <li class="list-group-item"><strong>Default Value:</strong> <code>boolean flag; System.out.println(flag);</code></li>
+          <li class="list-group-item"><strong>Wrapper Class:</strong> <code>Integer obj = Integer.valueOf(10);</code></li>
+        </ul>
+      </section>
+
+      <!-- Arrays in Java -->
+      <section class="my-4">
+        <h2 class="text-secondary">Key Points on Arrays in Java</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Array Declaration and Initialization:</strong> <code>int[] numbers = {1, 2, 3, 4, 5};</code></li>
+          <li class="list-group-item"><strong>Accessing Array Elements:</strong> <code>int firstNumber = numbers[0];</code></li>
+          <li class="list-group-item"><strong>Array Length:</strong> <code>int length = numbers.length;</code></li>
+          <li class="list-group-item"><strong>2D Array Declaration:</strong> <code>int[][] matrix = new int[3][3];</code></li>
+          <li class="list-group-item"><strong>2D Array Access:</strong> <code>matrix[0][1] = 5;</code></li>
+        </ul>
+      </section>
+
+      <!-- Assignment, Arithmetic, and Unary Operators in Java -->
+      <section class="my-4">
+        <h2 class="text-secondary">Key Points on Assignment, Arithmetic, and Unary Operators in Java</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Assignment Operator:</strong> <code>int a = 5;</code></li>
+          <li class="list-group-item"><strong>Compound Assignment:</strong> <code>a += 5;</code></li>
+          <li class="list-group-item"><strong>Arithmetic Operator:</strong> <code>int result = 10 + 5;</code></li>
+          <li class="list-group-item"><strong>Unary Increment:</strong> <code>int a = 5; a++;</code></li>
+          <li class="list-group-item"><strong>Operator Precedence:</strong> <code>int result = 5 + 2 * 3;</code></li>
+        </ul>
+      </section>
+
+      <!-- Equality, Relational, and Conditional Operators in Java -->
+      <section class="my-4">
+        <h2 class="text-secondary">Key Points on Equality, Relational, and Conditional Operators in Java</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Equality Operator:</strong> <code>boolean isEqual = (a == b);</code></li>
+          <li class="list-group-item"><strong>Relational Operator:</strong> <code>boolean isGreater = (a > b);</code></li>
+          <li class="list-group-item"><strong>Logical AND:</strong> <code>boolean isBothTrue = (a > 0) && (b > 0);</code></li>
+          <li class="list-group-item"><strong>Ternary Operator:</strong> <code>int max = (a > b) ? a : b;</code></li>
+          <li class="list-group-item"><strong>Short-Circuiting:</strong> <code>boolean result = (a > 0) && (b++ > 0);</code></li>
+        </ul>
+      </section>
+
+      <!-- Bitwise and Bit Shift Operators in Java -->
+      <section class="my-4">
+        <h2 class="text-secondary">Key Points on Bitwise and Bit Shift Operators in Java</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Bitwise AND:</strong> <code>int result = a & b;</code></li>
+          <li class="list-group-item"><strong>Bitwise OR:</strong> <code>int result = a | b;</code></li>
+          <li class="list-group-item"><strong>Left Shift:</strong> <code>int result = a << 1;</code></li>
+          <li class="list-group-item"><strong>Right Shift:</strong> <code>int result = a >> 1;</code></li>
+          <li class="list-group-item"><strong>Unsigned Right Shift:</strong> <code>int result = a >>> 1;</code></li>
+        </ul>
+      </section>
+
+      <!-- Expressions, Statements, and Blocks in Java -->
+      <section class="my-4">
+        <h2 class="text-secondary">Key Points on Expressions, Statements, and Blocks in Java</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Expression:</strong> <code>int sum = a + b * c;</code></li>
+          <li class="list-group-item"><strong>Statement:</strong> <code>int x = 5;</code></li>
+          <li class="list-group-item"><strong>Block:</strong> <code>{ int y = 10; y++; }</code></li>
+          <li class="list-group-item"><strong>Expression Statement:</strong> <code>x = y + z;</code></li>
+          <li class="list-group-item"><strong>Control Flow with Block:</strong> <code>if (condition) { statement1; statement2; }</code></li>
+        </ul>
+      </section>
+
+      <!-- if-then and if-then-else Statements in Java -->
+      <section class="my-4">
+        <h2 class="text-secondary">Key Points on The if-then and if-then-else Statements in Java</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>if-then Statement:</strong> <code>if (x > 0) { System.out.println("Positive"); }</code></li>
+          <li class="list-group-item">
+            <strong>if-then-else Statement:</strong>
+            <code>if (x > 0) { System.out.println("Positive"); } else { System.out.println("Non-positive"); }</code>
+          </li>
+          <li class="list-group-item">
+            <strong>Nested if Statements:</strong> <code>if (x > 0) { if (y > 0) { System.out.println("Both positive"); } }</code>
+          </li>
+          <li class="list-group-item">
+            <strong>else-if Ladder:</strong>
+            <pre><code>
+if (x > 0) { System.out.println("Positive"); }
+else if (x < 0) { System.out.println("Negative"); }
+else { System.out.println("Zero"); }
+                    </code></pre>
+          </li>
+          <li class="list-group-item"><strong>Single-line if Statement:</strong> <code>if (x > 0) System.out.println("Positive");</code></li>
+        </ul>
+      </section>
+
+      <!-- switch Statement in Java -->
+      <section class="my-4">
+        <h2 class="text-secondary">Key Points on The switch Statement in Java</h2>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>Purpose of switch Statement:</strong> <code>switch(day) { case 1: System.out.println("Monday"); break; }</code>
+          </li>
+          <li class="list-group-item">
+            <strong>Basic Syntax:</strong>
+            <pre><code>
+switch (value) {
+    case 1: System.out.println("One"); break;
+    case 2: System.out.println("Two"); break;
+    default: System.out.println("Other"); // default case if no match
+}
+                    </code></pre>
+          </li>
+          <li class="list-group-item"><strong>case and break Statements:</strong> <code>case 1: System.out.println("One"); break;</code></li>
+          <li class="list-group-item"><strong>default Case:</strong> <code>default: System.out.println("Default case executed");</code></li>
+          <li class="list-group-item">
+            <strong>Supported Data Types:</strong> <code>switch (letter) { case 'A': System.out.println("A selected"); break; }</code>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>
