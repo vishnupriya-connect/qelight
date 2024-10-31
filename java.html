@@ -52,8 +52,11 @@
             const html = converter.makeHtml(text);
 
             // Display each file's content in a new section
-            contentDiv.innerHTML += `<div class="markdown-section"><h3>${file.name}</h3>${html}</div>`;
+            // contentDiv.innerHTML += `<div class="markdown-section"><h3>${file.name}</h3>${html}</div>`;
+            contentDiv.innerHTML += `<div class="markdown-section">${html}</div>`;
+
           }
+          
         } catch (error) {
           console.error(`Failed to fetch files from ${folderPath}:`, error);
         }
