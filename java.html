@@ -28,8 +28,7 @@
         const repoOwner = "vishnupriya-connect"; // Replace with your GitHub username
         const repoName = "qelight"; // Replace with your GitHub repository name
         const branch = "main"; // Replace with your repository's default branch name (e.g., "main" or "master")
-        const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/${folderPath}?ref=${branch}`;
-        const apiUrl = `https://github.com/${repoOwner}/${repoName}/${folderPath}?ref=${branch}`;
+        const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${folderPath}?ref=${branch}`;
 
         try {
           const response = await fetch(apiUrl);
@@ -62,9 +61,9 @@
 
       // Define folder paths to fetch
       const folderPaths = [
-        "tree/main/theory/corejava/1",
-        "tree/main/theory/corejava/2",
-        "tree/main/theory/corejava/3",
+        "theory/corejava/1",
+        "theory/corejava/2",
+        "theory/corejava/3",
         // Add additional folder paths as needed
       ];
 
