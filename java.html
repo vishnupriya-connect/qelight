@@ -12,6 +12,11 @@
       .markdown-section {
         margin-bottom: 2em;
       }
+      .folder-heading {
+        color: #2c3e50;
+        font-size: 1.5em;
+        margin-top: 1em;
+      }
     </style>
   </head>
   <body>
@@ -19,37 +24,51 @@
     <div id="markdown-content"></div>
 
     <script>
-      async function fetchMarkdownFiles() {
-        const folderPath = "theory/corejava"; // Replace with the actual folder path in your repo
+      async function fetchMarkdownFiles(folderPath) {
         const repoOwner = "vishnupriya-connect"; // Replace with your GitHub username
         const repoName = "qelight"; // Replace with your GitHub repository name
         const branch = "main"; // Replace with your repository's default branch name (e.g., "main" or "master")
         const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${folderPath}?ref=${branch}`;
 
-        const response = await fetch(apiUrl);
-        const files = await response.json();
+        try {
+          const response = await fetch(apiUrl);
+          const files = await response.json();
 
-        // Filter and sort Markdown files alphabetically
-        const markdownFiles = files
-          .filter(file => file.name.endsWith(".md"))
-          .sort((a, b) => a.name.localeCompare(b.name));
+          // Filter and sort Markdown files alphabetically
+          const markdownFiles = files
+            .filter(file => file.name.endsWith(".md"))
+            .sort((a, b) => a.name.localeCompare(b.name));
 
-        const converter = new showdown.Converter();
-        const contentDiv = document.getElementById("markdown-content");
+          const converter = new showdown.Converter();
+          const contentDiv = document.getElementById("markdown-content");
 
-        // Fetch each Markdown file content and display it
-        for (let file of markdownFiles) {
-          const fileResponse = await fetch(file.download_url);
-          const text = await fileResponse.text();
-          const html = converter.makeHtml(text);
+          // Add folder heading
+          contentDiv.innerHTML += `<h2 class="folder-heading">Folder: ${folderPath}</h2>`;
 
-          // Display each file's content in a new section
-          contentDiv.innerHTML += `<div class="markdown-section"><h2>${file.name}</h2>${html}</div>`;
+          // Fetch each Markdown file content and display it
+          for (let file of markdownFiles) {
+            const fileResponse = await fetch(file.download_url);
+            const text = await fileResponse.text();
+            const html = converter.makeHtml(text);
+
+            // Display each file's content in a new section
+            contentDiv.innerHTML += `<div class="markdown-section"><h3>${file.name}</h3>${html}</div>`;
+          }
+        } catch (error) {
+          console.error(`Failed to fetch files from ${folderPath}:`, error);
         }
       }
 
-      // Load all Markdown files on page load
-      fetchMarkdownFiles();
+      // Define folder paths to fetch
+      const folderPaths = [
+        "theory/corejava/1",
+        "theory/corejava/2",
+        "theory/corejava/3",
+        // Add additional folder paths as needed
+      ];
+
+      // Fetch Markdown files for each folder path
+      folderPaths.forEach(fetchMarkdownFiles);
     </script>
   </body>
 </html>
